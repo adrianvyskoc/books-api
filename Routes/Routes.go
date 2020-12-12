@@ -12,10 +12,10 @@ func SetupRouter() *gin.Engine {
 	booksRoutes := r.Group("/api")
 	{
 		booksRoutes.GET("books", Controllers.GetBooks)
-		//booksRoutes.POST("books", Controllers.CreateBook)
+		booksRoutes.POST("books", Controllers.CreateBook)
 		//booksRoutes.GET("books/:id", Controllers.GetBookByID)
   	//booksRoutes.PUT("books/:id", Controllers.UpdateBook)
-		//booksRoutes.DELETE("books/:id", Controllers.DeleteBook)
+		booksRoutes.DELETE("books/:id", Controllers.DeleteBook)
 	}
 	return r
 }
